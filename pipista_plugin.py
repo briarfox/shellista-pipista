@@ -2,7 +2,7 @@
 Pipista added to Shellista!
 usage: pypi [download|search|version] module_name
 '''
-from ... tools.toolbox import bash
+#from ... tools.toolbox import bash
 
 
 import os, os.path, sys, urllib2, requests, xmlrpclib
@@ -10,9 +10,9 @@ import os, os.path, sys, urllib2, requests, xmlrpclib
 alias = ['pypi']
 
 def main(self,line):
-  args = bash(line)
+  args = line.split(' ')
   print args
-  if len(args) == 0:
+  if len(args) == 0 or args[0] == '':
     print '''usage: 
       pipista download package [version_number]
       pipista search package
