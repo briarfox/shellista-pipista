@@ -1,4 +1,5 @@
-'''pypi:
+'''
+pypi:
 Pipista added to Shellista!
 usage: pypi [download|search|version] module_name
 '''
@@ -10,6 +11,10 @@ import os, os.path, sys, urllib2, requests, xmlrpclib
 alias = ['pypi']
 
 def main(self,line):
+    do_pipista(line)
+    
+    
+def do_pipista(line):
   args = line.split(' ')
   print args
   if len(args) == 0 or args[0] == '':
@@ -203,4 +208,4 @@ if _auto_path:
 
 if __name__ == '__main__':
   command = raw_input('Command')
-  main(command)
+  do_pipista(command)
